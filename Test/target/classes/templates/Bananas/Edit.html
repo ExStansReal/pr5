@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<div class="HeaderClass" th:insert="Fragments/Header :: defaultHeader"/>
+
+
+<form th:action="'/Bananas/edit/' + ${id}", method="post" class="background_form"  th:object="${banana}" style="margin-top: 10px">
+
+    <p>Название
+        <input type="text" id="name" th:field="*{name}" placeholder="Имя">
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <p>Описание
+        <input type="text" id="opisanie" th:field="*{opisanie}" placeholder="Описание">
+    <div th:if="${#fields.hasErrors('opisanie')}" th:errors="*{opisanie}"></div>
+    <p>Компания поставки
+        <input type="text" id="companiyaPostavki" th:field="*{companiyaPostavki}" placeholder="Компания">
+    <div th:if="${#fields.hasErrors('companiyaPostavki')}" th:errors="*{companiyaPostavki}"></div>
+    <p>Цена за штуку
+        <input type="text" id="cost" th:field="*{cost}" placeholder="Цена">
+    <div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></div>
+    <p>Количество заказов
+        <input type="text" id="colZakazov" th:field="*{colZakazov}" placeholder="Заказы">
+    <div th:if="${#fields.hasErrors('colZakazov')}" th:errors="*{colZakazov}"></div>
+    <br>
+
+    <input type="submit" value="Изменить данные" class="btn btn-seccsess"/> <br>
+    <a class="btn btn-primary" href="/Bananas/"> Назад</a>
+
+
+
+</form>
+</body>
+</html>
