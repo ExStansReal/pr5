@@ -3,10 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 public class Bananas {
@@ -25,7 +22,7 @@ public class Bananas {
         Cost = cost;
         this.colZakazov = colZakazov;
     }
-    @NotEmpty(message = "Перемманая не может быть пустой!")
+    @NotNull(message = "Перемманая не может быть пустой!")
     @Min(message = "Переменная не может быть отрицательным",value = 0)
     @Max(message = "Переменная не может быть больше 50000",value = 50000)
     int Cost,colZakazov;

@@ -4,10 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 public class Monke {
@@ -81,7 +78,7 @@ public class Monke {
         this.rost = rost;
         this.weight = weight;
     }
-    @NotEmpty(message = "Рост не может быть пустой!")
+    @NotNull(message = "Рост не может быть пустой!")
     @Min(message = "Ромт не может быть отрицательным",value = 0)
     @Max(message = "Рост не может быть больше 200",value = 200)
     Integer rost;
@@ -89,7 +86,7 @@ public class Monke {
 
     @Min(message = "Вес не может быть меньше 10",value = 10)
     @Max(message = "Вес не может быть больше 500",value = 500)
-    @NotEmpty(message = "Вес не может быть пустым!")
+    @NotNull(message = "Вес не может быть пустым!")
     Integer weight;
 
     public Monke() {
