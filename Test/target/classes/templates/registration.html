@@ -11,7 +11,7 @@
 <div class="HeaderClass" th:insert="Fragments/Header :: defaultHeader"/>
 <h1>Регистрация нового пользователя</h1>
 
-<h3 th:value="${error}" style="color: red"></h3>
+<h3 th:text="${error}" style="color: red"></h3>
 <form th:action="@{/registration}" method="post" class="background_form">
   <div><label> User Name : <input type="text" name="username"/> </label></div>
   <div><label> Password: <input type="password" name="password"/> </label></div>

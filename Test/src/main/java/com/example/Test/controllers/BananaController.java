@@ -63,7 +63,7 @@ public class BananaController {
         Optional<Bananas> news = bananasRepository.findById(id);
         ArrayList<Bananas> newArrayList = new ArrayList<>();
         news.ifPresent(newArrayList::add);
-        model.addAttribute("Bananas",newArrayList.get(0));
+        model.addAttribute("banana",newArrayList.get(0));
 
         return "Bananas/Edit";
     }

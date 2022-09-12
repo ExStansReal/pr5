@@ -15,17 +15,21 @@ public class Bananas {
     @Size(message = "Поле не может быть меньше или больше", min = 0, max = 100)
     String name,opisanie,companiyaPostavki;
 
-    public Bananas(String name, String opisanie, String companiyaPostavki, int cost, int colZakazov) {
+    public Bananas(String name, String opisanie, String companiyaPostavki, Integer cost, Integer colZakazov) {
         this.name = name;
         this.opisanie = opisanie;
         this.companiyaPostavki = companiyaPostavki;
         Cost = cost;
         this.colZakazov = colZakazov;
     }
-    @NotNull(message = "Перемманая не может быть пустой!")
-    @Min(message = "Переменная не может быть отрицательным",value = 0)
-    @Max(message = "Переменная не может быть больше 50000",value = 50000)
-    int Cost,colZakazov;
+    @NotNull(message = "Цена не может быть пустой!")
+    @Min(message = "Цена не может быть отрицательным",value = 0)
+    @Max(message = "Цена не может быть больше 50000",value = 50000)
+    Integer Cost;
+    @NotNull(message = "Колличество заказов не может быть пустой!")
+    @Min(message = "Колличество заказов не может быть отрицательным",value = 0)
+    @Max(message = "Колличество заказов не может быть больше 500",value = 500)
+    Integer colZakazov;
 
     public Long getId() {
         return id;
@@ -43,7 +47,7 @@ public class Bananas {
         return companiyaPostavki;
     }
 
-    public int getCost() {
+    public Integer getCost() {
         return Cost;
     }
 
@@ -63,15 +67,15 @@ public class Bananas {
         this.companiyaPostavki = companiyaPostavki;
     }
 
-    public void setCost(int cost) {
+    public void setCost(Integer cost) {
         Cost = cost;
     }
 
-    public void setColZakazov(int colZakazov) {
+    public void setColZakazov(Integer colZakazov) {
         this.colZakazov = colZakazov;
     }
 
-    public int getColZakazov() {
+    public Integer getColZakazov() {
         return colZakazov;
     }
 

@@ -22,10 +22,10 @@
         <input type="text" id="companiyaPostavki" th:field="*{companiyaPostavki}" placeholder="Компания">
     <div th:if="${#fields.hasErrors('companiyaPostavki')}" th:errors="*{companiyaPostavki}"></div>
     <p>Цена за штуку
-        <input type="text" id="cost" th:field="*{cost}" placeholder="Цена">
+        <input type="number" id="cost" th:field="*{cost}" placeholder="Цена">
     <div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></div>
     <p>Количество заказов
-        <input type="text" id="colZakazov" th:field="*{colZakazov}" placeholder="Заказы">
+        <input type="number" id="colZakazov" th:field="*{colZakazov}" placeholder="Заказы">
     <div th:if="${#fields.hasErrors('colZakazov')}" th:errors="*{colZakazov}"></div>
     <br>
 
